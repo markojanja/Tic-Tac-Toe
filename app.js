@@ -51,7 +51,7 @@ const gameController = (() => {
     currentPlayer = switchPlayer ? PLAYER_O.mark : PLAYER_X.mark;
     getCurrentPlayer();
     gameHasWinner() ? getWinner(currentPlayer) : false;
-    gameIsDraw() ? getDraw : false;
+    gameIsDraw() ? getDraw() : false;
     switchPlayerTurn();
   };
 
@@ -110,7 +110,7 @@ const displayController = (() => {
 
   const setModalDrawMessage = () => {
     const message = document.getElementById("modal-msg");
-    message.textContent = "It's tie game";
+    message.textContent = "It's a tie game";
     gameController.disableClick();
   };
 
